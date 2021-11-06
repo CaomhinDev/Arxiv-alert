@@ -135,7 +135,7 @@ for url in queryURLs:
         #Print new articles from the log file
         
         try:
-            with open('.\\mockDB\\' +jsonFileName) as jsonDB:
+            with open('mockDB/' +jsonFileName) as jsonDB:
                 fileData = json.load(jsonDB)
                 jsonDB.close()
                 #Prepare email
