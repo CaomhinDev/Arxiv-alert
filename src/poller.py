@@ -48,7 +48,7 @@ def poll_new_articles(queryURL):
             "Published": None,
         }
     try:
-        with open('.\\mockDB\\' +jsonFileName) as jsonDB:
+        with open('mockDB/' +jsonFileName) as jsonDB:
             fileData = json.load(jsonDB)
             #Print latest article
             #pprint(fileData[0])
@@ -57,11 +57,9 @@ def poll_new_articles(queryURL):
             fileExists = True
     except FileNotFoundError:
         fileExists = False
-        print("File does not exist.")
+        print("Loading existing --- File does not exist.")
     except IndexError:
         print("File was probably empty..Index out of range")
-
-
 
     # Parse data with Beautiful soup
     soup = BeautifulSoup(str(data), 'lxml')
@@ -107,7 +105,7 @@ def poll_new_articles(queryURL):
         newPapers = True
         print("--- New Articles Detected---\n")
         pprint(matchingArticles)
-        with open(".\\mockDB\\" + jsonFileName, "w", encoding = 'utf-8') as outputFile:
+        with open("mockDB/" + jsonFileName, "w", encoding = 'utf-8') as outputFile:
             json.dump(matchingArticles, outputFile)
     return newPapers
         
@@ -153,7 +151,7 @@ for url in queryURLs:
                 print("New paper emails will be sent.")
                 smtp.send_message(msg) 
         except FileNotFoundError:
-            print("File does not exist.")
+            print("Email send function -> JSON file does not exist.")
     else:
         print("No new papers")
 smtp.quit()
