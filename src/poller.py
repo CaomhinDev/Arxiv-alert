@@ -25,11 +25,12 @@ load_dotenv()
 senderEmail = os.getenv('SENDER_EMAIL')
 senderEmailPassword = os.getenv('PASSWORD')
 destinationEmail = os.getenv('DEST_EMAIL')
-# Define all URLs to query
+### Define all URLs to query #################################################
 queryURLs = [
 "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=quinn&terms-0-field=all&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first",
 "https://arxiv.org/search/advanced?advanced=1&terms-0-operator=AND&terms-0-term=Randal-Williams&terms-0-field=author&terms-1-operator=AND&terms-1-term=homotopy&terms-1-field=abstract&terms-2-operator=OR&terms-2-term=K-theory&terms-2-field=abstract&terms-3-operator=OR&terms-3-term=equivariant&terms-3-field=title&terms-4-operator=OR&terms-4-term=cohommology&terms-4-field=title&classification-mathematics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first"
 ]
+##############################################################################
 
 def poll_new_articles(queryURL):
     progSafeURL = str(queryURL).encode('utf-8')
@@ -141,7 +142,7 @@ for url in queryURLs:
                 jsonDB.close()
                 #Prepare email
                 msg = EmailMessage()
-                msg['Subject'] = 'New Papers Detected'
+                msg['Subject'] = str(len(fileData)) + ' New Papers Detected'
                 msg['From'] = senderEmail
                 msg['To'] = destinationEmail
                 msgBody = "\nSearch URL:" + url + "\n\nNew Papers:"

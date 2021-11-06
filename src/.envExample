@@ -1,0 +1,3 @@
+SENDER_EMAIL="<gmailAccountToSendMailFrom>"
+PASSWORD="<gmailAccountPassword>"
+DEST_EMAIL="<emailToSendNotificationsTo>"
