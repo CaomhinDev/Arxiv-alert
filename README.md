@@ -1,5 +1,7 @@
 # Arxiv-alert
-This is a simple web scraping script that checks for new papers published to Arxiv containing certain keywords 
+This is a simple web scraping script that checks for new papers published to Arxiv containing certain keywords.
+It can be configured as a scheduled task that will periodically.
+When new papers are detected, an email will be sent to an address specified by the user.
 ## Setup
 ### Email Configuration
 Create a Gmail account and set it to allow less secure apps. This is used to allow Python to authenticate with the Gmail credentials.
