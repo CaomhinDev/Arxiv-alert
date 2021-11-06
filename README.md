@@ -1,4 +1,5 @@
 # Arxiv-alert
+This is a simple web scraping script that checks for new papers published to Arxiv containing certain keywords 
 ## Setup
 ### Email Configuration
 Create a Gmail account and set it to allow less secure apps. This is used to allow Python to authenticate with the Gmail credentials.
@@ -6,6 +7,6 @@ You can turn on this feature at the [following link](https://myaccount.google.co
 ### Python Packages
 Ensure you have all the Python packages installed, you can install them by using * *pip install -r requirements.txt* *
 ## Usage
-Create an array of search URLs and update the * *queryURLs* * variable in Poller.py
+Create an array of search URLs and update the * *queryURLs* * variable in Poller.py, you can manually visit the site and construct your advanced searches.
 Rename the * *.envExample* * file to * *.env* * and configure the sender email, sender password, and destination email values.
 Set the Python file to run as a scheduled task
