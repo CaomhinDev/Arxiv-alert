@@ -4,8 +4,8 @@
 Create a Gmail account and set it to allow less secure apps. This is used to allow Python to authenticate with the Gmail credentials.
 You can turn on this feature at the [following link](https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4PBzRUYCw8jDFLXfrpP7Q6Rn_ZMsC-o9oZiZsIREsKSa17ekyl8XmDNm_SYoPnMWa78ZM36i7hTKZq5caqUpz7zZwqosQ)
 ### Python Packages
-Ensure you have all the Python packages installed, you can install them by using ** pip install -r requirements.txt **
+Ensure you have all the Python packages installed, you can install them by using * *pip install -r requirements.txt* *
 ## Usage
-Create an array of search URLs and update the ** queryURLs ** variable in Poller.py
-Rename the **.envExample** file to **.env** and configure the sender email, sender password, and destination email values.
+Create an array of search URLs and update the * *queryURLs* * variable in Poller.py
+Rename the * *.envExample* * file to * *.env* * and configure the sender email, sender password, and destination email values.
 Set the Python file to run as a scheduled task
