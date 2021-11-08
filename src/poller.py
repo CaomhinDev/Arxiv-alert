@@ -97,15 +97,13 @@ def poll_new_articles(queryURL):
             matchFound = True
             break #End loop as a match was found
         matchingArticles.append(articleEntry)
-        #pprint(articleEntry)
-
 
     #Output results to JSON file, if there was at least one article found
     if(len(matchingArticles) >= 1):
         newPapers = True
         print("--- New Articles Detected---\n")
         pprint(matchingArticles)
-        #Write new articles to database log file
+    #Write new articles to database log file
         with open("mockDB/" + jsonFileName, "w", encoding = 'utf-8') as outputFile:
             json.dump(matchingArticles, outputFile)
     if(fileExists):
