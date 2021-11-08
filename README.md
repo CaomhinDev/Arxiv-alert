@@ -11,4 +11,8 @@ Ensure you have all the Python packages installed, you can install them by using
 ## Usage
 Create an array of search URLs and update the * *queryURLs* * variable in Poller.py, you can manually visit the site and construct your advanced searches.
 Rename the * *.envExample* * file to * *.env* * and configure the sender email, sender password, and destination email values.
-Set the Python file to run as a scheduled task
+Set the Python file to run as a scheduled task on Windows or Cronjob on Linux.
+# Linux Cronjob
+Use * *crontab -e* * to edit create a cronjob. You can add an entry as follows * *30 * * * * $(which Python) <pathToPyFile>\Poller.py * * 
+# Windows Schedule Task
+Use the task scheduler to run the script periodically.
