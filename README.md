@@ -13,6 +13,6 @@ Create an array of search URLs and update the * *queryURLs* * variable in Poller
 Rename the * *.envExample* * file to * *.env* * and configure the sender email, sender password, and destination email values.
 Set the Python file to run as a scheduled task on Windows or Cronjob on Linux.
 # Linux Cronjob
-Use * *crontab -e* * to edit create a cronjob. You can add an entry as follows * *30 * * * * $(which Python) <pathToPyFile>\Poller.py * * 
+Use * *crontab -e* * to edit create a cronjob. You can add an entry as follows "30 * * * * $(which Python) <pathToPyFile>\Poller.py"
 # Windows Schedule Task
 Use the task scheduler to run the script periodically.
