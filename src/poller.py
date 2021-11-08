@@ -105,9 +105,13 @@ def poll_new_articles(queryURL):
         newPapers = True
         print("--- New Articles Detected---\n")
         pprint(matchingArticles)
+        #Write new articles to database log file
         with open("mockDB/" + jsonFileName, "w", encoding = 'utf-8') as outputFile:
             json.dump(matchingArticles, outputFile)
-    return newPapers
+    if(fileExists):
+        return newPapers
+    else:
+        return False
         
 #Authenticate with email service
 try: 
@@ -121,7 +125,7 @@ try:
     #Defining The Message 
     message = ""
 except Exception as ex: 
-    print("Something went wrong....",ex) 
+    print("Something went wrong authenticating with email service....",ex) 
 
 #Call the polling function for each URL
 for url in queryURLs:
@@ -153,5 +157,5 @@ for url in queryURLs:
         except FileNotFoundError:
             print("Email send function -> JSON file does not exist.")
     else:
-        print("No new papers")
+        print("No new papers OR first time running poller")
 smtp.quit()
